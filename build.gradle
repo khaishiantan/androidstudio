@@ -1,15 +1,23 @@
-buildscript {
-    repositories {
-        jcenter()
-        google()
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.lakj.comspace.simpletextclient"
+        minSdkVersion 19
+        targetSdkVersion 23
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-    }
+dependencies {
+    compile 'com.android.support:support-v4:23.0.1'
 }
